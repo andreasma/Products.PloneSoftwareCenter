@@ -198,6 +198,53 @@ PloneSoftwareCenterSchema = OrderedBaseFolder.schema.copy() + Schema((
             rows=6,
         ),
     ),
+    
+                                                                       
+    TextField('title_legaldisclaimer',
+       default="Legal Disclaimer and Limitations",
+       widget=TextAreaWidget(
+            label=_(u"label_title_legaldisclaimer", default=u"Title for Legal Disclaimer and Limitations"),
+            description=_(u"help_title_legaldisclaimer", default=u"Enter any title for the legal disclaimer and limitations for downloads that should appear on each page for the upload of dowloadable files. This is the disclaimer, every contributor had to agree with."),
+            i18n_domain='plonesoftwarecenter',
+            rows=2,
+        ),
+    ),
+                                                                       
+                                                                      
+    TextField('legal_disclaimer',
+       default="<h5>Responsibility of Contributors</h5>"
+                "<p>Here goes your legal disclaimer text for contributors (e.g. that they don't infringe the rights of others.</p>",
+       default_content_type='text/html',
+       default_output_type='text/html',
+       widget=TextAreaWidget(
+            label=_(u"label_legal_disclaimer", default=u"Legal Disclaimer and Limitations"),
+            description=_(u"help_legal_disclaimer", default=u"Enter any legal disclaimer and limitations that should appear on each page for dowloadable files."),
+            i18n_domain='plonesoftwarecenter',
+            rows=35,
+        ),
+    ),
+                                                                      
+    TextField('title_legaldownloaddisclaimer',
+       default="Legal Disclaimer and Limitations for Downloads",
+       widget=TextAreaWidget(
+            label=_(u"label_title_legaldownloaddisclaimer", default=u"Title for Legal Disclaimer and Limitations for Downlaods"),
+            description=_(u"help_title_legaldownloaddisclaimer", default=u"Enter any title for the legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."),
+            i18n_domain='plonesoftwarecenter',
+            rows=1,
+        ),
+    ),
+                                                                                                                                             
+    TextField('legal_downloaddisclaimer',
+       default="<h5>Responsibility of Websiteuser</h5><p>Here you can insert the text of the legal disclaimer for user of the site which download files from the site.</p>",
+       default_content_type='text/html',
+       default_output_type='text/html',
+       widget=TextAreaWidget(
+            label=_(u"label_legal_downloaddisclaimer", default=u"Legal Disclaimer and Limitations for Downlaods"),
+            description=_(u"help_legal_downloaddisclaimer", default=u"Enter any legal disclaimer and limitations for downloads that should appear on each page for dowloadable files."),
+            i18n_domain='plonesoftwarecenter',
+            rows=20,
+        ),
+    ),                                     
 
     ReferenceField('featuredProject',
         multiValued=0,
