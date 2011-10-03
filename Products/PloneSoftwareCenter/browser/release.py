@@ -100,3 +100,11 @@ class ReleaseView(BrowserView):
                   self.context.getExpectedReleaseDate())
         else:
             return None
+            
+    def get_title_legaldownloaddisclaimer(self):
+        psc = self.context.getParentNode()
+        return psc.getTitle_legaldownloaddisclaimer()
+    
+    def get_legal_downloaddisclaimer(self):
+        psc = self.context.getParentNode()
+        return psc.getLegal_downloaddisclaimer()
