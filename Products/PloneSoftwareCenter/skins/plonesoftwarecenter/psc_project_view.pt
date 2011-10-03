@@ -212,6 +212,10 @@
                   </tal:downloads>
                   <dt tal:content="structure view/get_installation_instructions"/>
                 </dl>
+
+                <h3 class="legaldisclaimer" tal:content="view/get_title_legaldownloaddisclaimer" />
+                <p class="legaldisclaimer"  tal:content="structure view/get_legal_downloaddisclaimer" />
+               
         </div>
         </tal:stable>
         

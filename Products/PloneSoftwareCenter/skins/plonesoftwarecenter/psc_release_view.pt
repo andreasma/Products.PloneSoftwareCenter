@@ -132,6 +132,8 @@
 
     </div>
 
+    <h3 tal:content="view/get_title_legaldownloaddisclaimer" />
+    <p tal:content="structure view/get_legal_downloaddisclaimer" />
 
 
     <div class="visualClear"></div>
