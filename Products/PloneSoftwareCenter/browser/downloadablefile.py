@@ -40,3 +40,7 @@ class DownloadableFileView(BrowserView):
         """
         #return '%s/getDownloadableFile' % self.absolute_url()
         return self.context.absolute_url()
+        
+    def get_legal_disclaimer(self):
+        psc = self.context.getParentNode()
+        return psc.getLegal_disclaimer()
