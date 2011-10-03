@@ -65,6 +65,17 @@ PSCFileSchema = BaseSchema.copy() + Schema((
             i18n_domain="plonesoftwarecenter",
         ),
     ),
+    
+                                                
+
+    BooleanField('acceptdisclaimer',
+        required=1,
+        widget=BooleanWidget(
+             label=_(u"label_disclaimer", default=u"Accept the Legal Disclaimer and Limitations below:"),
+             description=_(u"help_description", default=u"<h3>Legal Disclaimers and Limitations</h3><p>Here gets your legal disclaimer text for contributors (e.g. with HTML-Tags).</p>"),
+             i18n_domain="plonesoftwarecenter",               
+        ),
+    ),
 
 ),
 
