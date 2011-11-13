@@ -18,6 +18,7 @@ from Products.PloneSoftwareCenter import PSCMessageFactory as _
 from Products.PloneSoftwareCenter.storage import DynamicStorage
 
 from Products.ATContentTypes.content.base import ATCTFileContent
+from Products.validation import V_REQUIRED
 
 # We need to make sure that the right storage is set at Field
 # creation to correctly trigger the layer registration process
@@ -47,6 +48,8 @@ PSCFileSchema = BaseSchema.copy() + Schema((
     FileField('downloadableFile',
         primary=1,
         required=1,
+        validators = (('isNonEmptyFile', V_REQUIRED),
+                      ('isVirusFree', V_REQUIRED),),
         widget=FileWidget(
             label=_(u"label_file_description", default=u"File"),
             description=_(u"help_file_description", default=u"Click 'Browse' to upload a release file."),
