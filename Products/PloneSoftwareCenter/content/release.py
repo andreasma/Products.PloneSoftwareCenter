@@ -240,6 +240,20 @@ PSCReleaseSchema = OrderedBaseFolderSchema.copy() + Schema((
         ),
         vocabulary='getRelatedFeaturesVocab',
     ),
+    
+                                                                
+   StringField(
+        name='sourcecodeinside',
+        required=1,
+        vocabulary= ('yes','no'),
+        widget=SelectionWidget(
+            format = 'radio',
+            label=_(u"label_sourcecodeinside", default=u"Sourcecode inside?"),
+            description=_(u"help_description", default=u"<p>Is the sourcecode inside your product?</p><p>If your product is provided under a copy left license (e.g. GPL or LGPL), contains e.g. C-, C++, Java or something similar and the sourcecode is not in your product, you have to provide the complete URL to the sourcecode of <b>this release</b> in the field below (Repository branch). Please don't forget to fill in the link below then, because otherwise you will get issues with the terms of the license.</p>"),
+            i18n_domain="plonesoftwarecenter",
+        ),
+    ),
+
 
     StringField('repository',
         searchable=1,
