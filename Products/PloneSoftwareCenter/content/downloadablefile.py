@@ -42,6 +42,7 @@ PSCFileSchema = BaseSchema.copy() + Schema((
             label=_(u"label_file_title", default=u"File Description"),
             description=_(u"help_file_title", default=u"File description. Normally something like 'Product Package', 'Windows Installer',  - or 'Events subsystem' if you have several separate modules. The actual file name will be the same as the file you upload."),
             i18n_domain="plonesoftwarecenter",
+            visible = {'edit' : 'hidden', 'view' : 'visible'},
         ),
     ),
 
